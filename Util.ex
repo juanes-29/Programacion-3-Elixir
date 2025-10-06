@@ -97,6 +97,14 @@ defmodule Util do
     end
   end
 
+  def ingresar(mensaje, :boolean) do
+    valor = mensaje
+    |> ingresar(:texto)
+    |> String.downcase()
+
+    Enum.member?(["si", "sí", "s"], valor)
+  end
+
   @doc """
   Muestra un mensaje de error en la salida de error.
   """
