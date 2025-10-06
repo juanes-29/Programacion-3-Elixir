@@ -1,6 +1,6 @@
 defmodule TallerRecursividadListas do
   @moduledoc """
-  Módulo de utilidades para mostrar mensajes usando programas externos.
+  Taller Recursividad listas.
 
   ## Autor: Juan Esteban Piñeros Maldonado
   ## Fecha: 05/10/2025
