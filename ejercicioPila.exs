@@ -63,7 +63,7 @@ defmodule DivideYVenceras do
 end
 
 
-IO.puts("Mayor en la lista: #{DivideYVenceras.mayor_lista([10, 2, 3, 4, 5, 8, 9])}")
+IO.puts("Mayor en la lista: #{DivideYVenceras.mayor_lista([10, 2, 8, 4, 5])}")
 
 IO.puts("Recorrido de la lista:")
 DivideYVenceras.recorrer([1, 2, 3, 4, 5])
