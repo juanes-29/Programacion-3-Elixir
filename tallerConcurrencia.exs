@@ -1,29 +1,30 @@
 defmodule MatrizOperaciones do
   @moduledoc """
-  ## Laboratorio de Concurrencia — Programación 3 Juan Esteban Piñeros Maldonado
+  ## Laboratorio de Concurrencia — Programación 3
 
-  Este módulo implementa operaciones básicas sobre una matriz utilizando recursividad y tareas concurrentes (`Task`).
+  Este módulo implementa operaciones básicas sobre una matriz utilizando *recursividad* y **tareas concurrentes (Task).
   Las funciones S1, S2, S3 y S4 representan distintos pasos de procesamiento concurrente:
 
-  - **S1:** Suma de los elementos debajo de la diagonal principal (recursiva)
-  - **S2:** Promedio de los elementos encima de la diagonal principal (recursiva)
-  - **S3:** Multiplicación de los resultados anteriores (con `Task`)
-  - **S4:** Resultado final, procesado también en una tarea concurrente
+  - *S1:* Suma de los elementos debajo de la diagonal principal (recursiva)
+  - *S2:* Promedio de los elementos encima de la diagonal principal (recursiva)
+  - *S3:* Multiplicación de los resultados anteriores (con Task)
+  - *S4:* Resultado final, procesado también en una tarea concurrente
   """
 
-  # Matriz base
+  # ----------------------- Matriz base -----------------------
   @matriz [
     [1, 2, 3],
     [4, 5, 6],
     [7, 8, 9]
   ]
 
-  # S1
+  # ----------------------- S1 -----------------------
   @doc """
-  Calcula la suma de los elementos por debajo de la diagonal principal de una matriz cuadrada.
+  Calcula la *suma de los elementos por debajo de la diagonal principal*
+  de una matriz cuadrada.
 
   ## Parámetros
-    - `matriz`: lista de listas que representa la matriz.
+    - matriz: lista de listas que representa la matriz.
 
   ## Ejemplo
 
@@ -51,13 +52,13 @@ defmodule MatrizOperaciones do
     end
   end
 
-  # S2
+  # ----------------------- S2 -----------------------
   @doc """
-  Calcula el **promedio de los elementos por encima de la diagonal principal
-  de una matriz cuadrada, usando recursividad.
+  Calcula el *promedio de los elementos por encima de la diagonal principal*
+  de una matriz cuadrada, usando recursión.
 
   ## Parámetros
-    - `matriz`: lista de listas que representa la matriz.
+    - matriz: lista de listas que representa la matriz.
 
   ## Ejemplo
 
@@ -85,30 +86,30 @@ defmodule MatrizOperaciones do
     end
   end
 
-  # S3
+  # ----------------------- S3 -----------------------
   @doc """
   Multiplica dos valores numéricos.
 
-  Representa la operación S3 = S1 * S2, ejecutada concurrentemente
-  mediante tareas (`Task`).
+  Representa la operación *S3 = S1 * S2*, ejecutada concurrentemente
+  mediante tareas (Task).
   """
   def multiplicacion(a, b), do: a * b
 
-  # S4
+  # ----------------------- S4 -----------------------
   @doc """
-  Devuelve el resultado final de la operación (S4).
+  Devuelve el *resultado final* de la operación (S4).
 
   Actualmente solo retorna el valor de entrada, pero puede modificarse
   para aplicar transformaciones adicionales.
   """
   def resultado_final(c), do: c
 
-  # el maiiiiiin :)
+  # ----------------------- main -----------------------
   @doc """
   Función principal del laboratorio.
 
-  - Lanza las tareas S1 y S2 concurrentemente.
-  - Espera los resultados de ambas y luego ejecuta S3 y S4 también como tareas.
+  - Lanza las tareas *S1* y *S2* concurrentemente.
+  - Espera los resultados de ambas y luego ejecuta *S3* y *S4* también como tareas.
   - Muestra los resultados intermedios y finales por consola.
   """
   def main do
@@ -135,3 +136,4 @@ end
 
 # Ejecutar el laboratorio
 MatrizOperaciones.main()
+
