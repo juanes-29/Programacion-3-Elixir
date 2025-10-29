@@ -3,7 +3,6 @@ defmodule Hilos do
   @aforoMaximo 5
 
   # Función pública que inicia el proceso semáforo con aforo inicial de 0
-  # Retorna el PID del proceso semáforo para poder enviarle mensajes
   def iniciar_semaforo() do
     spawn(fn -> semaforo(0) end)
   end
