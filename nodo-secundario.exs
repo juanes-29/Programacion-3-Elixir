@@ -1,5 +1,5 @@
 defmodule NodoServidor do
-  @nombre_servicio_local :servicio_cadenas
+  @nombre_servicio_local :servidor
 
   def main() do
     Util.mostrar_mensaje("PROCESO SECUNDARIO")
@@ -22,9 +22,18 @@ defmodule NodoServidor do
   end
 
   defp procesar_mensaje(:fin), do: :fin
+
+  # Procesar comandos desde el cliente
+  defp procesar_mensaje("mayus " <> texto), do: String.upcase(texto)
+  defp procesar_mensaje("minus " <> texto), do: String.downcase(texto)
+  defp procesar_mensaje("reverse " <> texto), do: String.reverse(texto)
+
+  # Comandos originales con tuplas (compatibilidad)
   defp procesar_mensaje({:mayusculas, msg}), do: String.upcase(msg)
   defp procesar_mensaje({:minusculas, msg}), do: String.downcase(msg)
   defp procesar_mensaje({funcion, msg}) when is_function(funcion, 1), do: funcion.(msg)
+
+  # Mensaje desconocido
   defp procesar_mensaje(mensaje), do: "El mensaje \"#{mensaje}\" es desconocido."
 end
 
